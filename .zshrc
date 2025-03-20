@@ -84,10 +84,18 @@ alias dfe='command dotfile-export-config-to-git'
 alias dfd='command dotfile-deploy-config'
 
 # ls Aliases
-alias la='command ls -al --color=auto'
-alias lal='command ls -al --color=auto | less -R'
-alias ll='command ls -al --color=auto'
-alias lll='command ls -al --color=auto | less -R'
+# if 'exa' exists, use that instead
+if which "exa" > /dev/null; then
+    alias la='command exa -al --color=auto'
+    alias lal='command exa -al --color=auto | less -R'
+    alias ll='command exa -al --color=auto'
+    alias lll='command exa -al --color=auto | less -R'
+else
+    alias la='command ls -al --color=auto'
+    alias lal='command ls -al --color=auto | less -R'
+    alias ll='command ls -al --color=auto'
+    alias lll='command ls -al --color=auto | less -R'
+fi
 
 # cd Aliases
 alias ..='cd ..'
@@ -115,8 +123,8 @@ alias v='command vim'
 alias vd='command vimdiff'
 
 # Ranger Aliases
-alias r='command ranger'
-alias sr='command sudo ranger'
+alias r='command vifm'
+alias sr='command sudo vifm'
 
 # Linux Tool Aliases
 alias f='command find'
@@ -124,12 +132,12 @@ alias ds='command du -h --max-depth=1 .'
 alias to='command touch'
 
 # Tmux Aliases
-alias t='command tmux'
-alias ta='command tmux attach'
-alias tat='command tmux attach -t'
-alias tk='command tmux kill-session -t'
-alias tl='command tmux ls'
-alias tn='command tmux new -s'
+alias t='command tmux -2'
+alias ta='command tmux -2 attach'
+alias tat='command tmux -2 attach -t'
+alias tk='command tmux -2 kill-session -t'
+alias tl='command tmux -2 ls'
+alias tn='command tmux -2 new -s'
 
 # Git Aliases
 alias g='command git'
