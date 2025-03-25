@@ -86,15 +86,15 @@ alias dfd='command dotfile-deploy-config'
 # ls Aliases
 # if 'exa' exists, use that instead
 if which "exa" > /dev/null; then
-    alias la='command exa -al --color=auto'
-    alias lal='command exa -al --color=auto | less -R'
-    alias ll='command exa -al --color=auto'
-    alias lll='command exa -al --color=auto | less -R'
+    alias la='command exa -al --color=always'
+    alias lal='command exa -al --color=always | batcat'
+    alias ll='command exa -al --color=always'
+    alias lll='command exa -al --color=always | batcat'
 else
-    alias la='command ls -al --color=auto'
-    alias lal='command ls -al --color=auto | less -R'
-    alias ll='command ls -al --color=auto'
-    alias lll='command ls -al --color=auto | less -R'
+    alias la='command ls -al --color=always'
+    alias lal='command ls -al --color=always | less -R'
+    alias ll='command ls -al --color=always'
+    alias lll='command ls -al --color=always | less -R'
 fi
 
 # cd Aliases
@@ -122,14 +122,19 @@ alias cdcom='cd /mnt/c/gitRepos/monarch-desktop-common/'
 alias v='command vim'
 alias vd='command vimdiff'
 
-# Ranger Aliases
-alias r='command vifm'
-alias sr='command sudo vifm'
+# Vifm Aliases
+alias r='command vifm .'
+alias sr='command sudo vifm .'
 
 # Linux Tool Aliases
 alias f='command find'
 alias ds='command du -h --max-depth=1 .'
 alias to='command touch'
+
+# Links Aliases
+alias w='command links2 -http.fake-firefox 1 -http.do-not-track 1'
+alias wg='command links2 -g -http.fake-firefox 1 -http.do-not-track 1'
+
 
 # Tmux Aliases
 alias t='command tmux -2'
@@ -149,7 +154,7 @@ alias gb='command git branch'
 alias gba='command git branch -al'
 alias gbd='command git branch -D'
 alias gbl='command git-branch-index-listing-select'
-alias gbll='command git-branch-index-listing-select | less -R'
+alias gbll='command git-branch-index-listing-select | batcat'
 alias gc='command git commit'
 alias gca='command git commit --amend'
 alias gcp='command git cherry-pick'
@@ -181,7 +186,7 @@ alias grsp='command git restore --staged -p'
 alias gsh='command git show'
 alias gshns='command git show --name-status'
 alias gs='command git status'
-alias gsl='command git status | less'
+alias gsl='command git status | batcat'
 alias gst='command git stash'
 alias gsta='command git stash apply'
 alias gstu='command git stash -u'
