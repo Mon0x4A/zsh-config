@@ -97,12 +97,14 @@ else
     alias lll='command ls -al --color=always | less -R'
 fi
 
+alias bc='command batcat'
+
 # cd Aliases
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+alias b='cd ..'
+alias bb='cd ../..'
+alias bbb='cd ../../..'
+alias bbbb='cd ../../../..'
+alias bbbbb='cd ../../../../..'
 alias cdg='cd ~/gitRepos'
 alias cdbg='cd ~/gitRepos/bash-config'
 alias cdvg='cd ~/gitRepos/vim-config'
